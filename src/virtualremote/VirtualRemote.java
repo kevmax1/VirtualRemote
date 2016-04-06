@@ -8,6 +8,7 @@ package virtualremote;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import ui.ChoseFonctionnalite;
+import ui.Plash;
 
 /**
  *
@@ -18,7 +19,7 @@ public class VirtualRemote extends Application {
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setOnCloseRequest(event->{System.exit(1);});
-        ChoseFonctionnalite singletonchose = new ChoseFonctionnalite(primaryStage);
+        Plash plash = new Plash(primaryStage);
     }
 
     /**

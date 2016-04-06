@@ -40,7 +40,7 @@ public class ServerUi {
         back.setMinSize(50, 50);
         back.setLayoutX(440);
         back.setLayoutY(340);
-        back.setStyle("-fx-background-radius: 50%; -fx-background-color: #19A15F;");
+        back.setStyle("-fx-background-radius: 50%; -fx-background-color: #9E21FF;");
         back.setCursor(Cursor.HAND);
         back.setGraphic(new ImageView(new Image("resource/back.png")));
         root.getChildren().add(back);
