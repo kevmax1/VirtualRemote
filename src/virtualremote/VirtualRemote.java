@@ -5,6 +5,7 @@
  */
 package virtualremote;
 
+import Util.commont.Config;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import ui.ChoseFonctionnalite;
@@ -20,6 +21,7 @@ public class VirtualRemote extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setOnCloseRequest(event->{System.exit(1);});
         Plash plash = new Plash(primaryStage);
+        Config.initConfig(plash);
     }
 
     /**

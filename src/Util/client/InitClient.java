@@ -77,6 +77,7 @@ public class InitClient {
         
     }
     public void back(){
-        ChoseFonctionnalite singletonchose = new ChoseFonctionnalite(this.stage);
+        this.stage.close();
+        ChoseFonctionnalite singletonchose = new ChoseFonctionnalite(new Stage());
     }
 }

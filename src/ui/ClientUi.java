@@ -5,6 +5,7 @@
  */
 package ui;
 
+import Util.commont.Config;
 import com.jfoenix.controls.JFXButton;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
@@ -20,6 +21,7 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -45,7 +47,7 @@ public class ClientUi {
         back.setMinSize(50, 50);
         back.setLayoutX(70);
         back.setLayoutY(5);
-        back.setStyle("-fx-background-radius: 50%; -fx-background-color: #9E21FF;");
+        back.setStyle("-fx-background-radius: 50%; -fx-background-color: "+Config.colorP+";");
         back.setCursor(Cursor.HAND);
         back.setGraphic(new ImageView(new Image("resource/back.png")));
         back.setOpacity(0.5);
@@ -55,7 +57,7 @@ public class ClientUi {
         param.setMinSize(50, 50);
         param.setLayoutX(10);
         param.setLayoutY(5);
-        param.setStyle("-fx-background-radius: 50%; -fx-background-color: #9E21FF;");
+        param.setStyle("-fx-background-radius: 50%; -fx-background-color: "+Config.colorP+";");
         param.setCursor(Cursor.HAND);
         param.setGraphic(new ImageView(new Image("resource/gear.png")));
         param.setOpacity(0.5);
@@ -65,6 +67,7 @@ public class ClientUi {
         stage.setTitle("Client");
         stage.setResizable(true);
         stage.setScene(scene);
+        stage.initStyle(StageStyle.DECORATED);
         stage.setOnCloseRequest(event->{System.exit(1);});
         stage.show();
     }

@@ -6,6 +6,7 @@
 package ui;
 
 import Util.client.UpdateCapture;
+import Util.commont.Config;
 import Util.commont.PlashThread;
 import com.jfoenix.controls.JFXSpinner;
 import javafx.scene.Scene;
@@ -27,16 +28,19 @@ public class Plash {
     public Stage stage;
     public Plash(Stage stage){
         this.stage =stage;
+    }
+    
+    public void init(){
         Pane root = new Pane();
         Scene scene = new Scene(root, 500, 300);
         String style = getClass().getResource("style.css").toExternalForm();
         scene.getStylesheets().addAll(style);
-        root.setStyle("-fx-background-color: #9E21FF;");
+        root.setStyle("-fx-background-color: "+Config.colorP+";");
         
-        Label capitalLetter = new Label("V");
+        Label capitalLetter = new Label(Config.logo);
         root.getChildren().add(capitalLetter);
         capitalLetter.setStyle("-fx-font-family: 'makisupa';-fx-weight:bold");
-        capitalLetter.setTextFill(Color.web("#FFF"));
+        capitalLetter.setTextFill(Color.web(Config.colorT));
         capitalLetter.setFont(new Font(200));
         capitalLetter.setLayoutX(30);
         capitalLetter.setLayoutY(20);
@@ -47,33 +51,33 @@ public class Plash {
         root.getChildren().add(chargement);
         
         Pane free = new Pane();
-        free.setStyle("-fx-background-color: #fff;-fx-padding:0px 3px");
-        Label textFree = new Label("Free");
+        free.setStyle("-fx-background-color:"+Config.colorT+";-fx-padding:0px 3px");
+        Label textFree = new Label(Config.type);
         textFree.setFont(Font.font("blueHightway", FontWeight.BOLD, 20));
-        textFree.setTextFill(Color.web("#9E21FF"));
+        textFree.setTextFill(Color.web(Config.colorP));
         free.getChildren().add(textFree);
         free.setLayoutX(431);
         free.setLayoutY(90);
         root.getChildren().add(free);
         
-        Label name = new Label("Virtual Remote");
+        Label name = new Label(Config.appName);
         root.getChildren().add(name);
         name.setFont(Font.font("blueHightway", FontWeight.BOLD, 30));
-        name.setTextFill(Color.web("#FFF"));
+        name.setTextFill(Color.web(Config.colorT));
         name.setLayoutX(160);
         name.setLayoutY(120);
         
-        Label year = new Label("2016 beta 1");
+        Label year = new Label(Config.year_version);
         root.getChildren().add(year);
         year.setFont(Font.font("blueHightway", FontWeight.BOLD, 18));
-        year.setTextFill(Color.web("#FFF"));
+        year.setTextFill(Color.web(Config.colorT));
         year.setLayoutX(380);
         year.setLayoutY(133);
         
-        Label copyright = new Label("Copyright © 2015-2016 Shinka Soft All right reserved");
+        Label copyright = new Label(Config.copyright);
         root.getChildren().add(copyright);
         copyright.setFont(Font.font("blueHightway", FontWeight.SEMI_BOLD, 13));
-        copyright.setTextFill(Color.web("#FFF"));
+        copyright.setTextFill(Color.web(Config.colorT));
         copyright.setLayoutX(170);
         copyright.setLayoutY(155);
         

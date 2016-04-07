@@ -29,7 +29,7 @@ public class UpdateCapture extends Thread{
     public void run(){
         for(int i=1;i<2;i--){
             try {
-                Thread.sleep(500);
+                Thread.sleep(41);
                 try{
                     byte[] screenShot = client.capture.capture();
                     InputStream in = new ByteArrayInputStream(screenShot);

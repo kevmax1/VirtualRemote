@@ -13,6 +13,7 @@ import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Optional;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import ui.ChoseFonctionnalite;
@@ -22,11 +23,11 @@ import ui.ServerUi;
  * @author HP
  */
 public class InitServer {
-    Stage stage;
+    Pane stage;
     ServerUi ui ;
     Registry registry;
     boolean started = false;
-    public InitServer(Stage stage){
+    public InitServer(Pane stage){
         this.stage = stage;
         startUI();
         startRemoteObjet();
@@ -50,10 +51,8 @@ public class InitServer {
         } catch (Exception ex) {
             ui.info.setText("L'erreur suivante est survenue lors de l'initialisation du serveur :"+ex.getMessage());
         }
-        ui.stage.setOnCloseRequest(event ->{disconnect();});
-        ui.back.setOnAction(event ->{back();});
     }
-    public void disconnect(){
+    /*public void disconnect(){
         try {
             InetAddress ia = InetAddress.getLocalHost();
             String serverAddr = ia.getHostAddress();
@@ -72,5 +71,5 @@ public class InitServer {
                     
         }
         ChoseFonctionnalite singletonchose = new ChoseFonctionnalite(this.stage);
-    }
+    }*/
 }

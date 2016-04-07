@@ -25,15 +25,23 @@ import javafx.stage.Stage;
  * @author HP
  */
 public class ServerUi {
-    public Stage stage;
+    public Pane stage;
     public Label info ;
     public JFXButton back;
-    public ServerUi(Stage stage){
+    public ServerUi(Pane stage){
         this.stage = stage;
+        info = new Label("");
+        info.setMaxSize(400, 400);
+        info.setLayoutX(10);
+        info.setLayoutY(14);
+        info.setFont(new Font("Algerian", 20));
+        info.setWrapText(true);
+        stage.getChildren().remove(0, stage.getChildren().size());
+        stage.getChildren().add(info);
         initUI();
     }
     private void initUI() {
-        Pane root = new Pane();
+        /*Pane root = new Pane();
         root.setBackground(new Background(new BackgroundImage(new Image("resource/background.jpg"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,new BackgroundSize(530, 400, true, true, true, true))));
         
         back = new JFXButton();
@@ -57,5 +65,6 @@ public class ServerUi {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+                */
     }
 }
