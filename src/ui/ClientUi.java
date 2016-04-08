@@ -68,6 +68,7 @@ public class ClientUi {
         stage.setResizable(true);
         stage.setScene(scene);
         stage.initStyle(StageStyle.DECORATED);
+        stage.getIcons().add(new Image("resource/icone.png"));
         stage.setOnCloseRequest(event->{System.exit(1);});
         stage.show();
     }

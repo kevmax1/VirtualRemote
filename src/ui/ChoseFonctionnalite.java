@@ -10,11 +10,13 @@ import Util.commont.Config;
 import Util.server.InitServer;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import java.awt.event.WindowEvent;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -46,6 +48,7 @@ public class ChoseFonctionnalite {
     Stage stage;
     Pane container;
     Label textFooter;
+    double xInit,yInit;
     public ChoseFonctionnalite(Stage stage){
         this.stage = stage;
         initUI();
@@ -79,6 +82,7 @@ public class ChoseFonctionnalite {
         reduire.setLayoutX(330);
         reduire.setLayoutY(3);
         reduire.setMinSize(30, 30);
+        //reduire.setOnAction(event -> {Event.fireEvent(stage,new javafx.stage.WindowEvent(stage,WindowEvent.COMPONENT_EVENT_MASK));});
         JFXButton param = new JFXButton();
         param.setCursor(Cursor.HAND);
         param.setRipplerFill(Color.GRAY);
@@ -116,7 +120,7 @@ public class ChoseFonctionnalite {
         textFooter.setFont(new Font(20));
         footer.setCenter(textFooter);
         //version
-        Label version = new Label("Version 1.0");
+        Label version = new Label("Version 1.1");
         version.setTextFill(Color.web(Config.colorS));
         version.setFont(new Font(15));
         version.setLayoutX(310);
@@ -186,11 +190,21 @@ public class ChoseFonctionnalite {
         Scene scene = new Scene(root, 400, 600);
         String style = getClass().getResource("style.css").toExternalForm();
         scene.getStylesheets().addAll(style);
+        entete.setOnMousePressed(event -> {
+            xInit = event.getScreenX()-stage.getX();
+            yInit = event.getScreenY()-stage.getY();
+        });
+        entete.setCursor(Cursor.HAND);
+        entete.setOnMouseDragged(event -> {
+            stage.setX(event.getScreenX()-xInit);
+            stage.setY(event.getScreenY()-yInit);
+        });
         stage.setTitle("Fontionnalité");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setOnCloseRequest(event->{System.exit(1);});
-        stage.initStyle(StageStyle.UNDECORATED);
+        stage.initStyle(StageStyle.UNDECORATED); 
+        stage.getIcons().add(new Image("resource/icone.png"));
         stage.show();
     }
 

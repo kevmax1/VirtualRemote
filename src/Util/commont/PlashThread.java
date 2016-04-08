@@ -23,7 +23,7 @@ public class PlashThread extends Thread{
     @Override
     public void run(){
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException ex) {
             Logger.getLogger(PlashThread.class.getName()).log(Level.SEVERE, null, ex);
         }

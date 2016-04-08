@@ -90,6 +90,7 @@ public class Plash {
         
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Chargement");
+        stage.getIcons().add(new Image("resource/icone.png"));
         stage.setScene(scene);
         stage.show();
         PlashThread thread = new PlashThread(this);
