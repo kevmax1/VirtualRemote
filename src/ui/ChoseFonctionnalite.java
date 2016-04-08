@@ -82,7 +82,7 @@ public class ChoseFonctionnalite {
         reduire.setLayoutX(330);
         reduire.setLayoutY(3);
         reduire.setMinSize(30, 30);
-        //reduire.setOnAction(event -> {Event.fireEvent(stage,new javafx.stage.WindowEvent(stage,WindowEvent.COMPONENT_EVENT_MASK));});
+        reduire.setOnAction(event -> {stage.setIconified(true);});
         JFXButton param = new JFXButton();
         param.setCursor(Cursor.HAND);
         param.setRipplerFill(Color.GRAY);

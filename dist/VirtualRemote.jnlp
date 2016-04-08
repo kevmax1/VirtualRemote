@@ -5,7 +5,6 @@
     <vendor>HP</vendor>
     <description>null</description>
     <icon href="src/resource/splash_color.png"  kind="splash"/>
-    <icon href="package/windows/VirtualRemote.ico" />
     <offline-allowed/>
   </information>
   <resources>
@@ -13,7 +12,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="VirtualRemote.jar" size="171012" download="eager" />
+    <jar href="VirtualRemote.jar" size="171082" download="eager" />
     <jar href="lib/jfoenix.jar" size="2106686" download="eager" />
     <jar href="lib/json-org.jar" size="36480" download="eager" />
   </resources>
